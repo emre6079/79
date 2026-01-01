@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Küçük Bir Sürpriz 💗</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+
+    /* 🌸 PEMBE ARKA PLAN */
+    background:
+        radial-gradient(circle at top left, #ffd6e5, transparent 60%),
+        radial-gradient(circle at bottom right, #ffc1d6, transparent 60%),
+        linear-gradient(135deg, #ffe6ef, #fff5f9);
+
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+}
+
+/* SAYFA KARTI */
+.page {
+    display: none;
+    width: 100%;
+    max-width: 360px;
+    padding: 20px;
+
+    /* 💕 KART HİSSİ */
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(8px);
+    border-radius: 24px;
+    box-shadow:
+        0 10px 30px rgba(255, 140, 180, 0.25),
+        inset 0 0 0 1px rgba(255,255,255,0.6);
+}
+
+.page.active {
+    display: block;
+}
+
+/* BAŞLIKLAR */
+h1 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #c24a7a;
+}
+
+/* YAZILAR */
+p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #5f2a42;
+}
+
+/* BUTON */
+button {
+    margin-top: 25px;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 999px;
+
+    background: linear-gradient(135deg, #ff8fb1, #ff6f9f);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+
+    box-shadow:
+        0 6px 18px rgba(255, 105, 160, 0.45);
+    transition: all 0.25s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow:
+        0 10px 25px rgba(255, 105, 160, 0.55);
+}
+
+/* MEDYA – BOYUTLAR DEĞİŞMEDİ */
+.media {
+    width: 100%;
+    max-width: 320px;
+    border-radius: 18px;
+    margin: 15px auto;
+    display: block;
+    box-shadow: 0 8px 20px rgba(255, 120, 170, 0.35);
+}
+
+.media1 {
+    width: 50%;
+    max-width: 320px;
+    height: 60px;
+    border-radius: 30px;
+    margin: 15px auto;
+    display: block;
+    box-shadow: 0 8px 20px rgba(255, 120, 170, 0.35);
+}
+
+/* MOBİL OKUNAKLILIK */
+@media (max-width: 400px) {
+    h1 { font-size: 22px; }
+    p { font-size: 14px; }
+}
+.heart {
+    position: absolute;
+    font-size: 28px;
+    animation: floatUp 4s ease-out forwards;
+    pointer-events: none;
+}
+
+/* 💬 YAZI EFEKTİ */
+.love-text {
+    position: absolute;
+    font-size: 15px;
+    color: #c24a7a;
+    font-weight: bold;
+    white-space: nowrap;
+    animation: floatUpText 3.5s ease-out forwards;
+    pointer-events: none;
+}
+
+/* ⬆️ AŞAĞIDAN YUKARI ANİMASYON */
+
+@keyframes floatUp {
+    from {
+        transform: translateY(0px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(-160px);
+        opacity: 1;
+    }
+}
+
+@keyframes floatUpText {
+    from {
+        transform: translateY(0px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(-130px);
+        opacity: 1;
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="page active" id="page1">
+    <h1>Küçük bir şey hazırladım 🌸</h1>
+    <b>Bitanem videoyu başlatır mısın?</b>
+    <video class="media1" controls>
+        <source src="videos/sarki.mp4" type="video/mp4">
+        
+    </video>
+    <button onclick="go(1)">Devam Et</button>
+</div>
+
+<div class="page" id="page2">
+    <h1>💗💗💗</h1>
+    <p>
+       Bu siteyi yaparken amacım sadece birkaç fotoğrafı yan yana koymak değildi.
+Burada görmek istediğim şey, hissettiklerimin küçük bir yansımasıydı.
+Her fotoğraf, seninle ilgili farklı bir anıyı, farklı bir duyguyu hatırlatıyor bana.
+Gülüşünle geçen güzel anlar, sessiz kaldığımız ama her şeyi hissettiğimiz zamanlar,
+ve yanımda olmasan bile aklımda olduğun her an…
+
+Yeni bir yıla girerken, bu sayfa sana şunu söylesin istedim:
+Sen, hayatıma sonradan girip her şeyi güzelleştiren en güzel detaysın.
+Takvimler değişse de, yıllar geçse de,
+seni düşündüğümde hissettiğim şey hep aynı kalıyor.
+
+Bu fotoğraflar belki konuşamaz ama ben her baktığımda şunu görüyorum:
+Huzur, mutluluk ve içten gelen bir tebessüm.
+Yeni yılda da bu gülüşün eksik olmasın,
+çünkü benim için her şey, sen güldüğünde daha güzel.
+        <br><br>
+        <strong>Hayatıma sonradan girip her şeyi güzelleştiren en güzel detaysın.</strong>
+    </p>
+    <button onclick="go(2)">Devam Et</button>
+</div>
+
+<div class="page" id="page3">
+    <img src="images/an10.jpg" class="media">
+    <p>Z</p>
+    <button onclick="go(3)">Devam Et</button>
+</div>
+
+<div class="page" id="page4">
+    <img src="images/an2.jpg" class="media">
+    <p>İ</p>
+    <button onclick="go(4)">Devam Et</button>
+</div>
+
+<div class="page" id="page5">
+    <img src="images/an3.jpg" class="media">
+    <p>L</p>
+    <button onclick="go(5)">Devam Et</button>
+</div>
+
+<div class="page" id="page6">
+    <img src="images/an4.jpg" class="media">
+    <p>A</p>
+    <button onclick="go(6)">Devam Et</button>
+</div>
+
+<div class="page" id="page7">
+    <img src="images/an5.jpg" class="media">
+    <p>N</p>
+    <button onclick="go(7)">Devam Et</button>
+</div>
+
+<div class="page" id="page8">
+    <img src="images/an6.jpg" class="media">
+    <p>💞💞​💞​​</p>
+    <button onclick="go(8)">Devam Et</button>
+</div>
+
+<div class="page" id="page9">
+    <img src="images/an7.jpg" class="media">
+    <p>E</p>
+    <button onclick="go(9)">Devam Et</button>
+</div>
+<div class="page" id="page10">
+    <img src="images/an9.jpg" class="media">
+    <p>M</p>
+    <button onclick="go(10)">Devam Et</button>
+</div>
+<div class="page" id="page11">
+    <img src="images/an14.jpg" class="media">
+    <p>R</p>
+    <button onclick="go(11)">Devam Et</button>
+</div>
+<div class="page" id="page12">
+    <img src="images/an1.jpg" class="media">
+    <p>E</p>
+    <button onclick="go(12)">Devam Et</button>
+</div>
+
+<div class="page" id="page13">
+    <video class="media" controls>
+        <source src="videos/an1.mp4" type="video/mp4">
+    </video>
+    <button onclick="go(13)">Devam Et</button>
+</div>
+
+<div class="page" id="page14">
+    <video class="media" controls>
+        <source src="videos/an2.mp4" type="video/mp4">
+    </video>
+    <button onclick="go(14)">Devam Et</button>
+</div>
+
+<div class="page" id="page15">
+    <video class="media" controls>
+        <source src="videos/an3.mp4" type="video/mp4">
+    </video>
+    <button onclick="go(15)">Devam Et</button>
+</div>
+
+<div class="page" id="page16">
+    <video class="media" controls>
+        <source src="videos/an4.mp4" type="video/mp4">
+    </video>
+    <button onclick="go(16)">Devam Et</button>
+</div>
+
+<div class="page" id="page17">
+    <video class="media" controls>
+        <source src="videos/an5.mp4" type="video/mp4">
+    </video>
+    <button onclick="go(17)">Devam Et</button>
+</div>
+
+<div class="page" id="page18">
+    <img src="images/an15.jpg" class="media">
+    <p><strong>İyi ki varsın 💗</strong></p>
+    <button onclick="surprise()">Kalbimi Aç 💖</button>
+</div>
+
+<script>
+function go(n) {
+    document.getElementById("page" + n).classList.remove("active");
+    document.getElementById("page" + (n + 1)).classList.add("active");
+}
+
+function surprise() {
+    const container = document.getElementById("page18");
+
+    spawn(container, "💗", "İyi ki varsın");
+    spawn(container, "💖", "Kalbimde yerin ayrı");
+    spawn(container, "💕", "Gülüşün yetiyor");
+    spawn(container, "💞", "Yanında huzur var");
+    spawn(container, "❤️", "Hep böyle kal");
+}
+
+function spawn(parent, emoji, text) {
+
+    const h = document.createElement("div");
+    h.className = "heart";
+    h.innerText = emoji;
+    h.style.left = Math.random() * 80 + "%";
+    h.style.bottom = "30px";   // ⬆️ yukarı aldık
+    parent.appendChild(h);
+
+    const t = document.createElement("div");
+    t.className = "love-text";
+    t.innerText = text;
+    t.style.left = Math.random() * 60 + "%";
+    t.style.bottom = "55px";   // ⬆️ yukarı aldık
+    parent.appendChild(t);
+
+    setTimeout(() => {
+        h.remove();
+        t.remove();
+    }, 4200);
+}
+</script>
+
+
+</body>
+</html>
