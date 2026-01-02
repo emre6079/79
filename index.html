@@ -298,27 +298,39 @@ function go(n) {
 function surprise() {
     const container = document.getElementById("page18");
 
-    spawn(container, "💗", "İyi ki varsın bitanem ");
-    spawn(container, "💖", "Gülüşün her şeyi güzelleştiriyor");
-    spawn(container, "💕", "Kalbimde en güzel yer senin");
-    spawn(container, "💞", "Yanında huzur var");
-    spawn(container, "❤️", "Her şey seninle daha anlamlı");
+    const items = [
+        { emoji: "💗", text: "İyi ki varsın bitanem " },
+        { emoji: "💖", text: "Gülüşün her şeyi güzelleştiriyor" },
+        { emoji: "💕", text: "Kalbimde en güzel yer senin" },
+        { emoji: "💞", text: "Yanında huzur var" },
+        { emoji: "❤️", text: "Her şey seninle daha anlamlı" }
+    ];
+
+    items.forEach((item, index) => {
+        setTimeout(() => {
+            spawn(container, item.emoji, item.text, index);
+        }, index * 500); // sırayla gelsin
+    });
 }
 
-function spawn(parent, emoji, text) {
+function spawn(parent, emoji, text, index) {
+
+    const baseBottom = 40 + index * 35; // 🔥 ALT ALTA ÇIKAR
 
     const h = document.createElement("div");
     h.className = "heart";
     h.innerText = emoji;
-    h.style.left = Math.random() * 80 + "%";
-    h.style.bottom = "30px";   // ⬆️ yukarı aldık
+    h.style.left = "50%";
+    h.style.transform = "translateX(-50%)";
+    h.style.bottom = baseBottom + "px";
     parent.appendChild(h);
 
     const t = document.createElement("div");
     t.className = "love-text";
     t.innerText = text;
-    t.style.left = Math.random() * 60 + "%";
-    t.style.bottom = "55px";   // ⬆️ yukarı aldık
+    t.style.left = "50%";
+    t.style.transform = "translateX(-50%)";
+    t.style.bottom = (baseBottom + 20) + "px";
     parent.appendChild(t);
 
     setTimeout(() => {
@@ -329,8 +341,10 @@ function spawn(parent, emoji, text) {
 </script>
 
 
+
 </body>
 </html>
+
 
 
 
